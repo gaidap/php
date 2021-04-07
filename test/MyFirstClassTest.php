@@ -2,6 +2,7 @@
     
     
     use PHPUnit\Framework\TestCase;
+    
     require_once "../classes/MyFirstClass.php";
     
     class MyFirstClassTest extends TestCase {
@@ -11,22 +12,22 @@
             self::assertTrue(in_array('MyFirstClass', $my_classes));
         }
         
-        function testCalculateSquareReturnsNaNIfNull () {
+        function testCalculateSquareReturnsNaNIfNull() {
             $myClass = new MyFirstClass();
             self::assertTrue(is_nan($myClass->calculateSquare(null)));
         }
         
-        function testCalculateSquareReturnsSquareOfNegativeNumber () {
+        function testCalculateSquareReturnsSquareOfNegativeNumber() {
             $myClass = new MyFirstClass();
             self::assertEquals(4, $myClass->calculateSquare(-2));
         }
         
-        function testCalculateSquareReturnsSquareOfPositiveNumber () {
+        function testCalculateSquareReturnsSquareOfPositiveNumber() {
             $myClass = new MyFirstClass();
             self::assertEquals(4, $myClass->calculateSquare(2));
         }
         
-        function testCalculateSquareReturnsSquareOfZero () {
+        function testCalculateSquareReturnsSquareOfZero() {
             $myClass = new MyFirstClass();
             self::assertEquals(0, $myClass->calculateSquare(0));
         }
