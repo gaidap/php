@@ -5,10 +5,17 @@
     $foo_page = $_SERVER[ 'PHP_SELF' ];
     $foo = new Foo();
     $bar_exists = isset($bar);
-    $session_exists = isset($_SESSION['bar']);
+    $session_exists = isset($_SESSION[ 'bar' ]);
     $session_id_exists = isset($session_id_exists);
-//    $bar = new Bar();
-//    Bar::$b = 'test';
+    $bar = new Bar();
+?>
+<?php
+    echo "<div><pre>";
+    Bar::$b = 'test';
+    var_dump($bar);
+    echo "\n" . Bar::$b;
+    echo "</pre></div>";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
