@@ -1,7 +1,7 @@
 <?php
     require_once "Foo.php";
     require_once "Bar.php";
-    session_start();
+    session_start(); // <- You have to call start_session on every page you need access to $_SESSION. It won't delete $_SESSION array.
     $foo_page = $_SERVER[ 'PHP_SELF' ];
     $foo = new Foo();
     $bar_exists = isset($bar);

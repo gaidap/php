@@ -1,7 +1,7 @@
 <?php
     require_once "Foo.php";
     require_once "Bar.php";
-    session_start(); // <- Will that work?
+    session_start(); // <- Will that work? Yes it will.
     $bar_page = $_SERVER[ 'PHP_SELF' ];
     
     $session_exists = isset($_SESSION[ 'bar' ]);
@@ -10,6 +10,7 @@
     $bar = new Bar();
    
     if ( isset($_POST[ 'submit' ]) ) {
+//        session_start(); // <- Will that work? No it won't! You have to start session before any output.
         $_SESSION[ 'bar' ] = 'test';
         Bar::$b = 'test';
 //        header("Location: scope_2.php");
