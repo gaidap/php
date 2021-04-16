@@ -3,6 +3,8 @@
     require_once "Bar.php";
     session_start(); // <- You have to call start_session on every page you need access to $_SESSION. It won't delete $_SESSION array.
     $foo_page = $_SERVER[ 'PHP_SELF' ];
+    
+    $static_bar = Bar::$b;
     $foo = new Foo();
     $bar_exists = isset($bar);
     $session_exists = isset($_SESSION[ 'bar' ]);
@@ -33,6 +35,9 @@
     ?>
     <?php
         echo "<pre><div>" . 'Is there a session id? ' . ($session_id_exists ? 'yes there is!' : 'na ah ah. no there isn\'t') . "</div></pre>"
+    ?>
+    <?php
+        echo "<pre><div>" . 'Is there a static bar? ' . (isset($static_bar) ? 'yes there is!' : 'na ah ah. no there isn\'t') . "</div></pre>"
     ?>
     <div>
         <pre><?php echo $foo_page; ?></pre>
